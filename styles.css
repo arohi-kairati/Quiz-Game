@@ -1,0 +1,199 @@
+/* basic reset */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #f4f0e2;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  padding: 1rem;
+  font-family: sans-serif;
+}
+
+.container {
+  background-color: white;
+  border-radius: 1rem;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.12);
+  width: 100%;
+  max-width: 600px;
+  overflow: hidden;
+  position: relative;
+}
+
+/* Screens */
+
+.screen {
+  display: none;
+  padding: 2rem;
+  text-align: center;
+}
+
+.screen.active {
+  display: block;
+}
+
+/* Start Screen */
+
+#start-screen h1 {
+  color: #073763;
+  margin-bottom: 20px;
+  font-size: 2.5rem;
+}
+
+#start-screen p {
+  color: #666;
+  font-size: 1.1rem;
+  margin-bottom: 30px;
+}
+
+/* Quiz Screen */
+
+.quiz-header {
+  margin-bottom: 2rem;
+}
+
+#question-text {
+  color: rgb(67, 66, 66);
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+  line-height: 1.4;
+}
+
+.quiz-info {
+  display: flex;
+  justify-content: space-between;
+  color: rgb(91, 91, 91);
+  margin-bottom: 10px;
+}
+
+#answers-container {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-bottom: 25px;
+}
+
+/* this class will be added by js code later */
+.answer-btn {
+  background-color: #e9f5fb;
+  color: rgb(41, 41, 41);
+  border: 2px solid #c8e3ea;
+  border-radius: 10px;
+  padding: 1rem;
+  cursor: pointer;
+  text-align: left;
+  transition: all 0.3s ease;
+}
+
+.answer-btn:hover {
+  background-color: #c7e9fb;
+  border-color: #95c2cd;
+}
+
+/* when correct answer is selected */
+/* this class will be added by js code later */
+.answer-btn.correct {
+  background-color: #e6fff0;
+  border-color: #a3f0c4;
+  color: #28a745;
+}
+
+/* when incorrect answer is selected */
+/* this class will be added by js code later */
+.answer-btn.incorrect {
+  background-color: #fff0f0;
+  border-color: #ffbdbd;
+  color: #dc3545;
+}
+
+.progress-bar {
+  height: 10px;
+  background-color: #bcdcf5;
+  border-radius: 5px;
+  overflow: hidden;
+  margin-top: 20px;
+}
+
+.progress {
+  height: 100%;
+  background-color: #0160a3;
+  width: 0%; /*initially, later updated by js code*/
+  transition: width 0.3s ease;
+}
+
+/* Results Screen */
+
+#result-screen h1 {
+  color: #073763;
+  margin-bottom: 30px;
+}
+
+.result-info {
+  background-color: #f4f0e2;
+  border-radius: 10px;
+  padding: 20px;
+  margin-bottom: 30px;
+}
+
+.result-info p {
+  font-size: 1.2rem;
+  color: #333;
+  margin-bottom: 1rem;
+}
+
+#result-message {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #0160a3;
+}
+
+/* common button design */
+button {
+  background-color: #0160a3;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  padding: 15px 30px;
+  font-size: 1.1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: #0170c0;
+}
+
+/* Responsive Design */
+@media (max-width: 500px) {
+  /* when we hit 500px or below the these styles will be implemented */
+  .screen {
+    padding: 1rem;
+  }
+
+  #start-screen h1 {
+    font-size: 2rem;
+  }
+
+  #question-text {
+    font-size: 1.3rem;
+  }
+
+  .answer-btn {
+    padding: 12px;
+  }
+
+  button {
+    padding: 12px 25px;
+    font-size: 1rem;
+  }
+
+  #result-screen h1 {
+    font-size: 1.5rem;
+  }
+}
